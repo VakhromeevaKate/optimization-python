@@ -14,13 +14,13 @@ import matplotlib.pyplot as plot
 
 globalEpsilon = 1e-6
 radius = 8                                 # working plane radius
-centre = (globalEpsilon, globalEpsilon)    # centre of the working circle
+centre = (1, 2)                            # centre of the working circle
 arrShape = 100                             # number of points processed / 360
 step = radius / arrShape                   # step between two points
 
 # 0 ⩽ x,y ⩽ 10:
-x0 = 1
-y0 = 2
+# x0 = 1
+# y0 = 2
 
 def firstFunction(x, y):
     return (x - 3) * (x - 3)  + y * y + 1
@@ -122,8 +122,36 @@ def drawChart(point, grid):
     ax.plot_surface(grid_x, grid_y, grid_z, rstride=5, cstride=5, alpha=0.7)
     plot.show()
 
-minX, minY = findMinimum(firstFunction)
-minimum = (minX, minY, firstFunction(minX, minY))
-drawChart(minimum, getGrid(0.05, firstFunction))
+myFunction = firstFunction
+#minX, minY = findMinimum(myFunction)
+#minimum = (minX, minY, myFunction(minX, minY))
+#print("first function min = %2f", minimum)
+# drawChart(minimum, getGrid(0.05, myFunction))
 
+#myFunction = secondFunction
+#minX, minY = findMinimum(myFunction)
+#minimum = (minX, minY, myFunction(minX, minY))
+#print("second function min = ", minimum)
+# drawChart(minimum, getGrid(0.05, myFunction))
+
+#myFunction = thirdFunction
+#minX, minY = findMinimum(myFunction)
+#minimum = (minX, minY, myFunction(minX, minY))
+#print("third function min = ", minimum)
+# drawChart(minimum, getGrid(0.05, myFunction))
+
+#myFunction = fourthFunction
+#myPoints = calculateFlipPoints(myFunction)
+#print(myPoints)
+#positions = rotateVector(myPoints)
+#minX, minY = findMinimum(myFunction)
+#minimum = (minX, minY, myFunction(minX, minY))
+#print("fourth function min = ", minimum)
+# drawChart(minimum, getGrid(0.05, myFunction))
+
+# myFunction = fifthFunction
+minX, minY = findMinimum(myFunction)
+minimum = (minX, minY, myFunction(minX, minY))
+print("fifthFunction function min = ", minimum)
+# drawChart(minimum, getGrid(0.05, myFunction))
 
